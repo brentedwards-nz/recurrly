@@ -6,42 +6,25 @@ const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
   return (
-    <SafeAreaView className="flex-1 bg-background p-5">
-      <Text className="text-xl font-bold text-success">
-        Welcome to Recurrly!
-      </Text>
+    <SafeAreaView className="flex-1 bg-background p-5 gap-4">
+      <Text className="text-5xl font-sans-extrabold text-primary">Home</Text>
       <Link
         href="/onboarding"
-        className="mt-t rounded-md bg-primary text-white p-4"
+        className="mt-t rounded-md bg-primary text-white p-4 font-sans-bold"
       >
         Go to onboarding
       </Link>
       <Link
         href="/(auth)/sign-in"
-        className="mt-t rounded-md bg-primary text-white p-4"
+        className="mt-t rounded-md bg-primary text-white p-4 font-sans-bold"
       >
         Go to Sign In
       </Link>
       <Link
         href="/(auth)/create-account"
-        className="mt-t rounded-md bg-primary text-white p-4"
+        className="mt-t rounded-md bg-primary text-white p-4 font-sans-bold"
       >
         Go to Create Account
-      </Link>
-      <Link
-        href="/(tabs)/subscriptions/spotify"
-        className="mt-t rounded-md bg-primary text-white p-4"
-      >
-        Spotify Subscription
-      </Link>
-      <Link
-        href={{
-          pathname: "/(tabs)/subscriptions/[id]",
-          params: { id: "claude" },
-        }}
-        className="mt-t rounded-md bg-primary text-white p-4"
-      >
-        Claude Subscription
       </Link>
     </SafeAreaView>
   );

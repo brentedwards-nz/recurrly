@@ -1,16 +1,16 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { Text } from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
+import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
+import { styled } from "nativewind";
+const SafeAreaView = styled(RNSafeAreaView);
 
 const SubscriptionDetails = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const capitalizedId = id.charAt(0).toUpperCase() + id.slice(1);
-  console.log("Cap Subscription ID:", capitalizedId);
   return (
-    <View>
-      <Text>Cap Subscription Details: {capitalizedId}</Text>
+    <SafeAreaView className="flex-1 bg-background p-5">
+      <Text>Cap Subscription Details: {id}</Text>
       <Link href="/">Go back...</Link>
-    </View>
+    </SafeAreaView>
   );
 };
 

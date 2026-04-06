@@ -8,7 +8,7 @@ export const tabs: AppTab[] = [
 ];
 
 export const HOME_USER = {
-  name: "Adrian | JS Mastery",
+  name: "Brent | DJBE",
 };
 
 export const HOME_BALANCE = {
@@ -38,6 +38,30 @@ export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
     icon: icons.figma,
     name: "Figma",
     price: 15.0,
+    currency: "USD",
+    daysLeft: 6,
+  },
+  {
+    id: "github",
+    icon: icons.github,
+    name: "GitHub",
+    price: 0.99,
+    currency: "USD",
+    daysLeft: 2,
+  },
+  {
+    id: "claude",
+    icon: icons.claude,
+    name: "Claude",
+    price: 1.0,
+    currency: "USD",
+    daysLeft: 4,
+  },
+  {
+    id: "canva",
+    icon: icons.canva,
+    name: "Canva",
+    price: 1.2,
     currency: "USD",
     daysLeft: 6,
   },

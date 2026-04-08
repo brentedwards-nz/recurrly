@@ -7,11 +7,13 @@ import {
   HOME_BALANCE,
   HOME_USER,
   UPCOMING_SUBSCRIPTIONS,
+  HOME_SUBSCRIPTIONS,
 } from "@/constants/data";
 import { formatCurrency } from "@/lib/utils";
 import dayjs from "dayjs";
 import ListHeading from "@/components/tabs/ListHeading";
 import UpcomingSubscriptionCard from "@/components/tabs/UpcomingSubscriptionCard";
+import SubscriptionCard from "@/components/tabs/SubscriptionCard";
 const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
@@ -39,7 +41,7 @@ export default function App() {
         <ListHeading title="Upcoming" />
         <FlatList
           data={UPCOMING_SUBSCRIPTIONS}
-          renderItem={({ item }) => <UpcomingSubscriptionCard data={item} />}
+          renderItem={({ item }) => <UpcomingSubscriptionCard {...item} />}
           keyExtractor={(item) => item.id}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -48,6 +50,14 @@ export default function App() {
       </View>
       <View>
         <ListHeading title="All Subscriptions" />
+        <FlatList
+          data={HOME_SUBSCRIPTIONS}
+          renderItem={({ item }) => <SubscriptionCard {...item} />}
+          keyExtractor={(item) => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          ListEmptyComponent={<Text>No upcoming subscriptions</Text>}
+        />
       </View>
     </SafeAreaView>
   );
